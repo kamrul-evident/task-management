@@ -11,6 +11,8 @@ from app.routes.user import user_routes
 
 from app.routes.auth import auth_router
 
+from app.routes.task import task_routes
+
 from app.middlewares.auth import AuthMiddleware
 from app.utils.auth import get_current_user
 
@@ -49,3 +51,4 @@ async def private_route(current_user: dict = Depends(get_current_user)):
 # include routers
 app.include_router(auth_router)
 app.include_router(user_routes)
+app.include_router(task_routes)
